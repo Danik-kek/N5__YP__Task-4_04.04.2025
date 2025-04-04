@@ -2,9 +2,19 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            Console.Write("Введите размер массива m: ");
+            int m = int.Parse(Console.ReadLine());
+            int[] D = new int[m];
+
+            Console.WriteLine("Введите элементы массива:");
+            for (int i = 0; i < m; i++) D[i] = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < m; i++) if (D[i] < 0) D[i] = 0;
+
+            Console.WriteLine("Массив после замены отрицательных элементов нулями:");
+            Console.WriteLine(string.Join(" ", D));
         }
     }
 }
